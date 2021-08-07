@@ -46,6 +46,8 @@ public class RequestHeaderServlet extends HttpServlet {
         System.out.println(headerName + ": " + request.getHeader(headerName));
         }
         */
+
+        // getHeaderNames()는 Header의 모든 이름(key)을 가져온다.
         request.getHeaderNames().asIterator().forEachRemaining(headerName -> System.out.println(headerName + ": " + request.getHeader(headerName)));
 
         request.getHeader("host"); // 헤더 요소 중 원하는 요소 하나를 get 할 수 있다.
@@ -63,12 +65,16 @@ public class RequestHeaderServlet extends HttpServlet {
         System.out.println();
 
         System.out.println("[Accept-Language 편의 조회]");
+
+        // getLocales()는 Locale의 모든 이름(key)을 가져온다.
         request.getLocales().asIterator().forEachRemaining(locale -> System.out.println("locale = " + locale));
         System.out.println("request.getLocale() = " + request.getLocale());
         System.out.println();
 
         System.out.println("[cookie 편의 조회]");
         if (request.getCookies() != null) {
+
+            // getCookies()는 Cookie 모든 이름(key)을 가져온다.
             for (Cookie cookie : request.getCookies()) {
                 System.out.println(cookie.getName() + ": " + cookie.getValue());
             }

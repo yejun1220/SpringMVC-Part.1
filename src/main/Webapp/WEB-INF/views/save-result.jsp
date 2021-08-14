@@ -6,6 +6,7 @@
 <body>
 성공
 <ul>
+<%--    member는 setAttribute에 추가된 key와 value 중 key다.--%>
     <li>id=${member.id}</li>
     <li>username=${member.username}</li>
     <li>age=${member.age}</li>
